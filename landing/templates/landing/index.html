@@ -1,0 +1,245 @@
+{% load static %}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TerraScope Analytics</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .hero {
+            background: #E5E8FE;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .trusted-logos img {
+            height: 40px;
+            margin: 0 15px;
+            opacity: 0.7;
+        }
+
+        .section-block {
+            padding: 60px 0;
+        }
+
+        .card-icon {
+            font-size: 35px;
+            color: #6c4cf1;
+        }
+
+        .nav-link.active {
+      color: #3B82F6 !important;
+       font-weight: bold;
+
+       /* Active link = pricing page, about, documentation etc. */
+    .nav-link.active {
+    color: #3B82F6 !important;
+    font-weight: bold;
+}
+
+/* Hover color for ALL navigation links */
+    .nav-link:hover {
+    color: #3B82F6 !important;
+}
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+     <nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
+            <div class="container d-flex justify-content-between align-items-center">
+        
+                <!-- LEFT: Logo -->
+                <a class="navbar-brand fw-bold me-auto" href="#">TerraScope</a>
+        
+                <!-- CENTER: Links -->
+                <div class="navbar-collapse collapse d-flex justify-content-center" id="mainNavbar">
+                    <ul class="navbar-nav mx-auto">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" 
+                        href="{% url 'home' %}">
+                        Home
+                    </a>
+                    <a class="nav-link {% if request.resolver_match.url_name == 'pricing' %}active{% endif %}"
+   href="{% url 'pricing' %}">
+   Pricing
+</a>
+
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Documentation</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- RIGHT: Buttons -->
+                <div class="d-flex ms-auto">
+                    <a href="/signup/" class="btn btn-primary me-4">Get Started</a>
+                    <a href="/login/" class="btn btn-outline-primary me">Login</a>
+                </div>
+        
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        
+
+        
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fw-bold display-5">Real-Time Geospatial Intelligence for a Changing Planet</h1>
+            <p class="lead mt-3">
+                Instant access to raw imagery, analytics layers, and role-based dashboards powered by TerraScope’s
+                nanosatellite network.
+            </p>
+            <a href="#" class="btn btn-primary btn-lg mt-3">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Hero Image -->
+    <div class="container my-5">
+        <img src="{% static 'css/images/satellite.png' %}" class="img-fluid rounded shadow" alt="Satellite Image">
+    </div>
+
+    <!-- Trusted By -->
+    <section class="text-center py-5 bg-light">
+        <h3 class="fw-bold mb-4">Trusted by:</h3>
+        <div class="d-flex trusted-logos align-items-center justify-content-center flex-wrap gap-4">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'css/images/logo 1.png' %}">
+                <p> Label NGO</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <img src="{% static 'css/images/logo2.png' %}">
+                <p> Label NGO</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <img src="{% static 'css/images/logo3.png' %}">
+                <p> Label NGO</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <img src="{% static 'css/images/logo4.png' %}">
+                <p> Label NGO</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <img src="{% static 'css/images/logo5.png' %}">
+                <p> Label NGO</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <img src="{% static 'css/images/logo6.png' %}">
+                <p> Label NGO</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Built For -->
+    <section class="section-block">
+        <div class="container">
+            <h3 class="fw-bold text-center mb-5">Built for:</h3>
+
+            <div class="row g-4">
+
+                <!-- Government -->
+                <div class="col-md-12">
+                    <div class="card p-4 shadow-sm">
+                        <div class="d-flex">
+                            <div>
+                                <img src="{% static 'css/images/government.png' %}" width="150" class="me-3">
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold">For Government</h5>
+                                <p>
+                                    Monitor environmental changes, access climate dashboards,
+                                    and receive automated alerts for high-risk regions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGOs -->
+                <div class="col-md-12">
+                    <div class="card p-4 shadow-sm">
+                        <div class="d-flex">
+                            <div>
+                                <img src="{% static 'css/images/ngo.png' %}" width="150" class="me-3">
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold">For NGOs</h5>
+                                <p>
+                                    Detect deforestation, track ecosystem health, and act quickly
+                                    using AI-powered intelligence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+               <!-- Enterprise -->
+                <div class="col-md-12">
+                    <div class="card p-4 shadow-sm">
+                        <div class="d-flex">
+                            <div>
+                                <img src="{% static 'css/images/enterprise.png' %}" width="150" class="me-3">
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold">For NGOs</h5>
+                                <p>
+                                    Assess high-value assets, optimize operations, and reduce risk
+                                    using real-time geospatial analytics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+
+                <!-- Developers -->
+                <div class="col-md-12">
+                    <div class="card p-4 shadow-sm">
+                        <div class="d-flex">
+                            <div class="ms-3">
+                                <div class="d-flex">
+                                    <div>
+                                        <img src="{% static 'css/images/developer.png' %}" width="150" class="me-3">
+                                    </div>
+                                    <div class="ms-3">
+                                        <h5 class="fw-bold">For Developers</h5>
+                                        <p>
+                                            Integrate raw and processed satellite data via clean APIs for
+                                            real-time insights and analytics.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<h3>Enter Verification Code</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    <input class="form-control" type="text" name="code" placeholder="6-digit code">
+    <button class="btn btn-primary mt-3 w-100">Verify</button>
+</form>
